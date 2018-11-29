@@ -10,6 +10,14 @@ Unfortunately all the available plugins did not work for some rason. My solution
 The repo includes this guide, my shell script to control the GPIO pins and an example config.json for homebridge.
 
 ## Step by Step Guide
+### Hardware
+
+### Software
+I use a standard raspbian image. There are enough install guides on how to prepare an SD card tor your RPI.
+
+##### Tips
+ - Make sure to change the pssword for the PI user.
+ - If you need ssh access without a monitor, create a file calles `ssh` on the root partition.
 
 #### Install Avahi
 
@@ -24,11 +32,11 @@ The repo includes this guide, my shell script to control the GPIO pins and an ex
  5. Extract the file: `tar xf node-v11.3.0-linux-armv7l.tar.gz`
  6. Now you can copy the files: `sudo cp -R node-v10.4.1-linux-armv7l/* /usr/local/
 
-#### Install homebridge
+#### Install Homebridge
 
 To install homebridge do a: `sudo npm install -g --unsafe-perm homebridge`
 
-##### Install our Plugin
+#### Install our Plugin
 
 To install homebridge do a: `npm install -g homebridge-script2`
 
