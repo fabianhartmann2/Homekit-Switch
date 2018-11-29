@@ -1,0 +1,46 @@
+{
+    "bridge": {
+        "name": "SWITCHBOX-4P-001",
+        "username": "02:68:B3:29:DA:98",
+        "port": 51826,
+        "pin": "094-31-749"
+    },
+    "description": "This is my configuration",
+    "accessories": [
+        {
+            "accessory": "Script2",
+            "name": "Relay 01",
+            "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 17",
+            "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 17",
+            "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 17",
+            "on_value" : "ON"
+        },
+        {
+            "accessory": "Script2",
+            "name": "Relay 02",
+            "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 18",
+            "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 18",
+            "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 18",
+            "on_value" : "ON"
+        },
+        {
+            "accessory": "Script2",
+            "name": "Relay 03",
+            "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 23",
+            "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 23",
+            "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 23",
+            "on_value" : "ON"
+        },
+        {
+            "accessory": "Script2",
+            "name": "Relay 04",
+            "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 24",
+            "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 24",
+            "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 24",
+            "on_value" : "ON"
+        }
+    ],
+
+    "platforms": [
+    ]
+}
