@@ -141,5 +141,6 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
       "platforms": [
       ]
   }
-  ```
+  ``` <BR>
+  IF you use other GPIO pins, don't forget to change them in the config file.
   3. Change permissions for our config directory: `sudo chown -R homebridge:homebridge /var/homebridge`
