@@ -38,7 +38,7 @@ To install homebridge do a: `sudo npm install -g --unsafe-perm homebridge`
 
 #### Install our Plugin
 
-To install homebridge do a: `npm install -g homebridge-script2`
+To install homebridge-script2 do a: `npm install -g homebridge-script2`
 
 #### Install Shell Script
 
@@ -93,7 +93,7 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
  To Configure homebridge, we create a config directory and place our config.json into it.
 
   1. Create directory: `sudo mkdir -p /var/homebridge`
-  2. Create our config file: `sudo nano /var/homebridge/config.json` <BR> with the following content:
+  2. Create our config file: `sudo nano /var/homebridge/config.json` <BR> with the following content: <BR> **If you use other GPIO pins, don't forget to change them in the config file.** <BR> Do also modify *name*, *username* and *pin*.
 
 ```
   {
@@ -143,7 +143,5 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
       ]
   }
   ```
-  <BR>
-  IF you use other GPIO pins, don't forget to change them in the config file.
 
   3. Change permissions for our config directory: `sudo chown -R homebridge:homebridge /var/homebridge`
