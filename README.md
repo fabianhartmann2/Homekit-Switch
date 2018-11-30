@@ -2,10 +2,10 @@
 I was looking for a solution to control non HomeKit devices (lights, coffee machines, etc.) via HomeKit.
 
 It turned out that a Raspberry Pi is a perfect platform for doun such things.
-Homebridge is a verry extendable base with a variety of already developed plugins.
+*[Homebridge](https://github.com/nfarina/homebridge)* is a verry extendable base with a variety of already developed plugins.
 Unfortunately all the available plugins did not work for some rason. My solution was to controll the GPIO pins via shell script and use *[homebridge-script2](https://github.com/pponce/homebridge-script2#readme)* to controll the script.
 
-[Smartapfel](https://smartapfel.de/homebridge/homebridge-installieren/) has a verry usefull guide to setup homebridge. Hovewer I wrote all the steps down to have it in a single guide.
+*[Smartapfel](https://smartapfel.de/homebridge/homebridge-installieren/)* has a verry usefull guide to setup homebridge. Hovewer I wrote all the steps down to have it in a single guide.
 
 The repo includes this guide, my shell script to control the GPIO pins and an example config.json for homebridge.
 
@@ -49,6 +49,7 @@ We need to configure a service to start homebridge on boot. To do so, follow the
 
  1. Create a service account: `sudo useradd -m -c "Homebridge Service" -s /bin/bash homebridge`
  2. We ned to configure permissions for that user. Therefore we need to create a file: `sudo nano /etc/sudoers.d/homebridge` <BR> And ad the following into it: `homebridge ALL=(root) SETENV:NOPASSWD: /usr/local/bin/npm, /bin/systemctl restart homebridge, /bin/journalctl, /usr/local/bin/node`
+ 3. TO access GPIO we need to add our user to the GPIO group: `sudo adduser homebridge gpio`
  3. Now we need to set permissions for that file: `sudo chmod 640 /etc/sudoers.d/homebridge`
  4. Now we create the service file: `sudo nano /etc/systemd/system/homebridge.service` and add the following content:
 
@@ -144,4 +145,5 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
   ```
   <BR>
   IF you use other GPIO pins, don't forget to change them in the config file.
+
   3. Change permissions for our config directory: `sudo chown -R homebridge:homebridge /var/homebridge`
