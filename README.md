@@ -93,7 +93,7 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
  To Configure homebridge, we create a config directory and place our config.json into it.
 
   1. Create directory: `sudo mkdir -p /var/homebridge`
-  2. Create our config file: `sudo nano /var/homebridge/config.json` <BR> with the following content: <BR> **If you use other GPIO pins, don't forget to change them in the config file.** <BR> Do also modify *name*, *username* and *pin*.
+  2. Create our config file: `sudo nano /var/homebridge/config.json` <BR> with the following content: <BR> **If you use other GPIO pins, don't forget to change them in the config file.** <BR> **Do also modify name, username and pin**.
 
 ```
   {
