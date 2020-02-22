@@ -18,14 +18,6 @@
         {
             "accessory": "Script2",
             "name": "Relay 02",
-            "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 18",
-            "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 18",
-            "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 18",
-            "on_value" : "ON"
-        },
-        {
-            "accessory": "Script2",
-            "name": "Relay 03",
             "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 23",
             "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 23",
             "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 23",
@@ -33,10 +25,18 @@
         },
         {
             "accessory": "Script2",
-            "name": "Relay 04",
+            "name": "Relay 03",
             "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 24",
             "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 24",
             "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 24",
+            "on_value" : "ON"
+        },
+        {
+            "accessory": "Script2",
+            "name": "Relay 04",
+            "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 25",
+            "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 25",
+            "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 25",
             "on_value" : "ON"
         }
     ],

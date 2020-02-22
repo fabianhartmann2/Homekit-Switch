@@ -16,8 +16,19 @@ The repo includes this guide, my shell script to control the GPIO pins and an ex
 I use a standard raspbian image. There are enough install guides on how to prepare an SD card tor your RPI.
 
 ##### Tips
- - Make sure to change the pssword for the PI user.
- - If you need ssh access without a monitor, create a file calles `ssh` on the root partition.
+ - Make sure to change the pssword for the PI user. `passwd`
+ - If you need ssh access without a monitor, create a file calles `ssh` on the root partition. 
+
+#### Change Hostname
+Specify a hostname for your RPI by editing the folloiwing files:
+ 
+ - `sudo nano /etc/hostname`
+ - `sudo nano /etc/hosts`
+
+#### Change PI Password
+Specify a password for the PI user, don't leave it standard!
+
+`passwd`
 
 #### Install Avahi
 
@@ -71,6 +82,7 @@ KillMode=process
 WantedBy=multi-user.target
 ```
  5. And a 2nd file to configure the enviroment: `sudo nano /etc/default/homebridge` with content: <BR>
+
 ```
 # Defaults / Configuration options for homebridge
 # The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)
@@ -95,6 +107,7 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
   1. Create directory: `sudo mkdir -p /var/homebridge`
   2. Create our config file: `sudo nano /var/homebridge/config.json` <BR> with the following content: <BR> **If you use other GPIO pins, don't forget to change them in the config file.** <BR> **Do also modify name, username and pin**.
 
+
 ```
   {
       "bridge": {
@@ -116,14 +129,6 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
           {
               "accessory": "Script2",
               "name": "Relay 02",
-              "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 18",
-              "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 18",
-              "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 18",
-              "on_value" : "ON"
-          },
-          {
-              "accessory": "Script2",
-              "name": "Relay 03",
               "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 23",
               "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 23",
               "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 23",
@@ -131,10 +136,18 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
           },
           {
               "accessory": "Script2",
-              "name": "Relay 04",
+              "name": "Relay 03",
               "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 24",
               "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 24",
               "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 24",
+              "on_value" : "ON"
+          },
+          {
+              "accessory": "Script2",
+              "name": "Relay 04",
+              "on": "/var/homebridge/relaycontrol/relaycontroller.sh on 25",
+              "off": "/var/homebridge/relaycontrol/relaycontroller.sh off 25",
+              "state": "/var/homebridge/relaycontrol/relaycontroller.sh status 25",
               "on_value" : "ON"
           }
       ],
@@ -145,3 +158,6 @@ HOMEBRIDGE_OPTS=-I -U /var/homebridge
   ```
 
   3. Change permissions for our config directory: `sudo chown -R homebridge:homebridge /var/homebridge`
+
+##### Sources
+ - http://raspberrypiguide.de/howtos/raspberry-pi-gpio-how-to/
